@@ -70,6 +70,32 @@
     void R(name) (void) { KF(release)(value);                  \
                           KF(release)(KEYBOARD__RightAlt); }
 
+/**                                            macros/KEYS__ALT_GR/description
+ * Define the functions for a "AltGr" key (i.e. a key that sends a "AltGr"
+ * along with the keycode).
+ */
+#define  KEYS__ALT_GR_SEQ(name, dead_key, value)               \
+    void P(name) (void) { KF(press)(KEYBOARD__RightAlt);       \
+                          KF(press)(dead_key);                 \
+                          usb__kb__send_report();              \
+                          KF(release)(dead_key);               \
+                          KF(release)(KEYBOARD__RightAlt);     \
+                          usb__kb__send_report();              \
+                          KF(press)(value); }                  \
+    void R(name) (void) { KF(release)(value); }
+
+#define  KEYS__ALT_GR_SHIFT_SEQ(name, dead_key, value)               \
+    void P(name) (void) { KF(press)(KEYBOARD__RightAlt);       \
+                          KF(press)(dead_key);                 \
+                          usb__kb__send_report();              \
+                          KF(release)(dead_key);               \
+                          KF(release)(KEYBOARD__RightAlt);     \
+                          usb__kb__send_report();              \
+                          KF(press)(KEYBOARD__LeftShift);      \
+                          KF(press)(value); }                  \
+    void R(name) (void) { KF(release)(value);                  \
+                          KF(release)(KEYBOARD__LeftShift); }
+
 /**                                            macros/TYPE__ALT_GR/description
  * Define the functions for a "AltGr" key (i.e. a key that sends a "AltGr"
  * along with the keycode). Other than KEYS_SHIFTED, this does send

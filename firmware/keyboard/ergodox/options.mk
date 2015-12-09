@@ -31,7 +31,8 @@ KEYBOARD_LAYOUTS := \
 	colemak--kinesis-mod \
 	dvorak--kinesis-mod \
 	qwerty--kinesis-mod \
-	neo2--tschulte
+	neo2--tschulte \
+	workman--igel
 # a list of all available layouts for this keyboard
 
 # -----------------------------------------------------------------------------
