@@ -1,5 +1,5 @@
 This is my fork of [benblazak's Ergodox firmware](https://github.com/benblazak/ergodox-firmware).
-It's from a partial rewrite, that's aparently not finished, but I never had any problems with it.
+It's from a partial rewrite, that's apparently not finished, but I never had any problems with it.
 
 My keyboard layout has four layers:
 
